@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var username=""
-    @State private var password=""
-    @State private var showingLoginScreen=false
+    @State private var username = ""
+    @State private var password = ""
+    @State private var showingLoginScreen = false
     
     var body: some View {
         NavigationView{
             ZStack{
                 Color.blue.ignoresSafeArea()
                 Circle().scale(1.7).foregroundColor(.white)
-                VStack{
-                    Image("logo1").frame(width: 400.0, height: 110.0)
+                VStack {
                     Text("Bienvenido").font(.largeTitle).bold()
                     TextField("Username o correo",text:$username).keyboardType(.emailAddress).padding().frame(width: 300, height: 50).background(Color.black.opacity(0.05)).cornerRadius(10)
                     TextField("Password",text:$username).padding().frame(width: 300, height: 50).background(Color.black.opacity(0.05)).cornerRadius(10)
