@@ -5,7 +5,7 @@
 //  Created by monica fatecha on 2022-08-17.
 //
 
-import SwiftUI
+/*import SwiftUI
 
 @main
 struct app_iosApp: App {
@@ -15,3 +15,4 @@ struct app_iosApp: App {
         }
     }
 }
+*/
