@@ -16,7 +16,7 @@ struct ContentView: View {
         NavigationView{
             ZStack{
                 Color.blue.ignoresSafeArea()
-                Circle().scale(1.7).foregroundColor(.white)
+                Circle().scale(1.7).foregroundColor(.gray)
                 VStack {
                     Text("Bienvenido").font(.largeTitle).bold()
                     TextField("Username o correo",text:$username).keyboardType(.emailAddress).padding().frame(width: 300, height: 50).background(Color.black.opacity(0.05)).cornerRadius(10)
