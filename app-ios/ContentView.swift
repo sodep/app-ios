@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+
 
 struct ContentView: View {
     @State private var username = ""
@@ -18,11 +20,12 @@ struct ContentView: View {
                 Color.blue.ignoresSafeArea()
                 Circle().scale(1.7).foregroundColor(.gray)
                 VStack {
+                    Image("logo1").frame(width: 400, height: 110)
                     Text("Bienvenido").font(.largeTitle).bold()
-                    TextField("Username o correo",text:$username).keyboardType(.emailAddress).padding().frame(width: 300, height: 50).background(Color.black.opacity(0.05)).cornerRadius(10)
-                    TextField("Password",text:$username).padding().frame(width: 300, height: 50).background(Color.black.opacity(0.05)).cornerRadius(10)
+                    TextField("Username o correo",text:$username).keyboardType(.emailAddress).padding().frame(width: 300, height: 50).background(Color.black.opacity(0.05)).cornerRadius(10).foregroundColor(.blue)
+                    TextField("Password",text:$password).padding().frame(width: 300, height: 50).background(Color.black.opacity(0.05)).cornerRadius(10).foregroundColor(.blue)
                     Button("Ingresar"){
-                        //accion
+                        validarCredenciales()
                     }.foregroundColor(.white).frame(width: 300, height:50).background(Color.blue).cornerRadius(10)
                     Text("Crear Cuenta").font(.system(size: 12, weight: .light, design: .serif))
                         .italic().underline().frame(height:20)
@@ -37,11 +40,17 @@ struct ContentView: View {
     }
     
     func validarCredenciales(){
-        if username=="paty123"{
-            if password=="paty321"{
+        FirebaseAuth.Auth.auth().signIn(withEmail: username, password: password,completion: {(result,error) in
+            if error != nil{
+                print("Error al iniciar sesion")
+            }else
+            {
+              print("Inicio sesion exitoso")
                 
             }
-        }
+        })
+        
+   
     }
 }
 
