@@ -8,12 +8,20 @@
 *.dSYM.zip
 *.dSYM
 
+*.xcworkspace
+!default.xcworkspace
+profile
+
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
 
 .build/
 xcuserdata/
+app-ios.xcodeproj/xcuserdata
+app-ios.xcodeproj/project.pbxproj
+
 
 # CocoaPods
 #
