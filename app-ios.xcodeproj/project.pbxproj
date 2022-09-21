@@ -40,9 +40,9 @@
 		0C6826CE47BE3C24E0508278 /* Pods-app-ios-app-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app-ios-app-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-app-ios-app-iosUITests/Pods-app-ios-app-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		48726D1A92E69E434FCE8615 /* Pods_app_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		695F3FFC28D8B942001B4294 /* EmailPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordView.swift; sourceTree = "<group>"; };
+		695F3FFE28D8BFDC001B4294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		697AE97C28C8E98F0058FC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		697AE97E28C8F6E80058FC3A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		697AE98028C8F7310058FC3A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		697AE98228C8F74F0058FC3A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		795136AD949C3D574280F5C2 /* Pods-app-ios-app-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app-ios-app-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-app-ios-app-iosUITests/Pods-app-ios-app-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		847AD46028AD4A6D00A97CAA /* app-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "app-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,11 +88,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		691EDC4228DB5FCF00A2C055 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		691EDC4328DB5FF000A2C055 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				695F3FFC28D8B942001B4294 /* EmailPasswordView.swift */,
+				847AD46528AD4A6D00A97CAA /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		847AD45728AD4A6D00A97CAA = {
 			isa = PBXGroup;
 			children = (
 				697AE97E28C8F6E80058FC3A /* GoogleService-Info.plist */,
-				697AE98028C8F7310058FC3A /* GoogleService-Info.plist */,
 				697AE98228C8F74F0058FC3A /* GoogleService-Info.plist */,
 				847AD46228AD4A6D00A97CAA /* app-ios */,
 				847AD46128AD4A6D00A97CAA /* Products */,
@@ -114,12 +129,13 @@
 		847AD46228AD4A6D00A97CAA /* app-ios */ = {
 			isa = PBXGroup;
 			children = (
+				691EDC4328DB5FF000A2C055 /* Views */,
+				691EDC4228DB5FCF00A2C055 /* Controllers */,
+				695F3FFE28D8BFDC001B4294 /* Info.plist */,
 				847AD46328AD4A6D00A97CAA /* app_iosApp.swift */,
-				847AD46528AD4A6D00A97CAA /* ContentView.swift */,
 				847AD46728AD4A6E00A97CAA /* Assets.xcassets */,
 				847AD46928AD4A6E00A97CAA /* Preview Content */,
 				697AE97C28C8E98F0058FC3A /* AppDelegate.swift */,
-				695F3FFC28D8B942001B4294 /* EmailPasswordView.swift */,
 			);
 			path = "app-ios";
 			sourceTree = "<group>";
@@ -557,6 +573,7 @@
 				DEVELOPMENT_TEAM = H38QXTY3QY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "app-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -587,6 +604,7 @@
 				DEVELOPMENT_TEAM = H38QXTY3QY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "app-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

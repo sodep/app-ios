@@ -8,7 +8,8 @@ target 'app-ios' do
   # Pods for app-ios
   pod 'Firebase'
   pod 'Firebase/Auth'
-
+  pod 'GoogleSignIn'
+  pod 'GoogleSignInSwiftSupport'
   target 'app-iosTests' do
     inherit! :search_paths
     # Pods for testing

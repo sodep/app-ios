@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseAuth
+import GoogleSignIn
 
 
 struct ContentView: View {
@@ -18,16 +19,30 @@ struct ContentView: View {
         NavigationView{
             ZStack{
                 Color.blue.ignoresSafeArea()
-                Circle().scale(1.7).foregroundColor(.gray)
+                Circle().scale(1.7).foregroundColor(.white)
                 VStack {
                    Text("Bienvenido").font(.largeTitle).bold()
-                    Button(action: {}) {
+                    Button(action: {signin() }) {
                         HStack(alignment: .center, spacing: 5.0) {
                             Image("googleMail")
                                 .padding(.leading, 10.0)
                             Text("Ingresar con Google")
                                 .foregroundColor(.black)
                                 .padding(.all, 10.0)
+                            
+                        }
+                    }
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(10)
+                    
+                    Button(action: {signin()}) {
+                        HStack(alignment: .center, spacing: 5.0) {
+                            Image("googleMail")
+                                .padding(.leading, 10.0)
+                            Text("Ingresar con Email")
+                                .foregroundColor(.black)
+                                .padding(.all, 10.0)
+                            
                         }
                     }
                     .background(Color.gray.opacity(0.1))
@@ -40,6 +55,18 @@ struct ContentView: View {
     }
     
     
+}
+
+func signin(){
+    let signInConfig = GIDConfiguration.init(clientID: "CLIENT_ID")
+    guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else {return}
+    GIDSignIn.sharedInstance.signIn(
+        with: signInConfig,
+        presenting: presentingViewController,
+        callback: { user, error in
+            //Completion Code
+        }
+    )
 }
 
 struct ContentView_Previews: PreviewProvider {
